@@ -1,12 +1,11 @@
 # AWMC B50 Upload API Request Tool
 
-这是一个简单的 Python 脚本，用于请求 AWMC B50 上传 API。
+这是一个简单的 Python 脚本，用于请求 AWMC.cc B50 上传 API。
 
 ## 功能特性
 
 - 默认请求 `https://api.awmc.cc/v1/upload_b50` 端点
-- 支持 Bearer 令牌认证
-- 交互式输入 `qr_text` 参数
+- 交互式输入 SGWCMAID 参数
 - 从 `.env` 文件读取 `FISH_TOKEN` 和 `BEARER_TOKEN`
 
 ## 开箱即用
@@ -19,25 +18,19 @@
 编辑 `.env` 文件，设置你的令牌：
 
 ```env
-FISH_TOKEN=你的鱼令牌
-BEARER_TOKEN=你的Bearer令牌
+FISH_TOKEN=你的水鱼令牌
+BEARER_TOKEN=你的AWMC.cc API令牌
 ```
 
 ## 使用方法
 
 ### 默认模式（推荐）
 
-运行脚本后，会提示输入 `qr_text`：
+运行脚本后，会提示输入SGWCMAID：
 
 ```bash
 python api_request.py
 # 或双击 run.bat
-```
-
-### 自定义 qr_text
-
-```bash
-python api_request.py --qr-text "你的二维码文本"
 ```
 
 ### 自定义环境文件
