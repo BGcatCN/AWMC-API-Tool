@@ -24,22 +24,23 @@
 1. 编辑 `.env` 文件，设置以下变量：
    ```
    FISH_TOKEN=你的水鱼Token
-   BEARER_TOKEN=你的awmc.cc Token
+   BEARER_TOKEN=你的awmc.cc API Token
    LXNS_CODE=你的落雪好友码
    ```
 
 ## 使用方法
 
 1. 双击 `run_upload_b50.bat` 文件。
-2. 选择要运行的脚本：输入 1（上传水鱼）或 2（上传落雪）。
+2. 选择要运行的脚本：输入 1（上传水鱼）或 2（上传落雪）或3（测试API）。
 3. 在命令窗口中输入 `qr_text` 并按回车。
 4. 查看 API 响应结果。
 
 ## 文件说明
 
-- `upload_b50.py`：上传水鱼脚本文件
-- `upload_b50_lx.py`：上传落雪脚本文件
-- `run_upload_b50.bat`：Windows 批处理文件，用于选择并运行脚本
+- `upload_b50.py`：上传水鱼脚本
+- `upload_b50_lx.py`：上传落雪脚本
+- `mai_ping.py`：API检测脚本
+- `run.bat`：Windows 批处理文件，用于选择并运行脚本
 - `requirements.txt`：Python 依赖包列表
 - `.env`：环境变量配置文件
 - `venv/`：虚拟环境文件夹，包含 Python 解释器和依赖包
