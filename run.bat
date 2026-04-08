@@ -1,21 +1,35 @@
 @echo off
 :menu
-echo Ñ¡ÔñÐèÒªÔËÐÐµÄ½Å±¾:
-echo 1. ÉÏ´«Ë®Óã (upload_b50.py)
-echo 2. ÉÏ´«ÂäÑ© (upload_b50_lx.py)
-echo 3. ²âÊÔAPI×´Ì¬ (mai_ping.py)
-echo 4. ÍË³ö
-set /p choice="Ñ¡Ôñ (1-4): "
+color 07
+echo Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÐµÄ½Å±ï¿½ï¿½ï¿½ï¿½ï¿½:
+echo 1. ï¿½Ï´ï¿½B50
+echo 2. ï¿½ï¿½ï¿½API×´Ì¬
+echo 3. ï¿½Ë³ï¿½
+set /p choice="Ñ¡ï¿½ï¿½ (1-3): "
 if "%choice%"=="1" goto upload_b50
-if "%choice%"=="2" goto upload_b50_lx
-if "%choice%"=="3" goto mai_ping
-if "%choice%"=="4" goto end
-echo Invalid choice
-pause
+if "%choice%"=="2" goto mai_ping
+if "%choice%"=="3" goto end
+echo ï¿½ï¿½Ð§Ñ¡ï¿½ï¿½...
 goto menu
 
+::ï¿½Ëµï¿½
+::ï¿½ï¿½ï¿½ï¿½Ä¾ï¿½Ö»ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ëµï¿½...
+
 :upload_b50
-python upload_b50.py
+color 07
+echo Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ÐµÄ½Å±ï¿½:
+echo 1.ï¿½Ï´ï¿½Ë®ï¿½ã£¨upload_b50.pyï¿½ï¿½
+echo 2.ï¿½Ï´ï¿½ï¿½ï¿½Ñ©ï¿½ï¿½upload_b50_lx.pyï¿½ï¿½
+echo 3.ï¿½ï¿½ï¿½ï¿½
+set /p choice="Ñ¡ï¿½ï¿½(1-3):"
+if "%choice%"=="1" goto upload_b50_fish
+if "%choice%"=="2" goto upload_b50_lx
+if "%choice%"=="3" goto menu
+echo ï¿½ï¿½Ð§Ñ¡ï¿½ï¿½...
+goto upload_b50
+
+:upload_b50_fish
+python upload_b50_fish.py
 call :after_run
 goto end
 
@@ -30,11 +44,11 @@ call :after_run
 goto end
 
 :after_run
+color 07
 echo.
-choice /c YN /n /m "½Å±¾ÔËÐÐÒÑ½áÊø£¬»Øµ½²Ëµ¥Âð? (Y = »Øµ½²Ëµ¥, N = ÍË³ö): " >nul
+choice /c YN /n /m "ï¿½Å±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½ï¿½Ëµï¿½ï¿½ï¿½? (Y/N): " >nul
 if errorlevel 2 goto end
 if errorlevel 1 goto menu
 goto end
 
 :end
-pause
